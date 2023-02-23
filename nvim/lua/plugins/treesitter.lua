@@ -1,0 +1,31 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
+    opts.ensure_installed = {
+      "bash",
+      "c_sharp",
+      "dockerfile",
+      "go",
+      "hcl",
+      "help",
+      "html",
+      "http",
+      "java",
+      "javascript",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "mermaid",
+      "python",
+      "query",
+      "regex",
+      "sql",
+      "terraform",
+      "tsx",
+      "typescript",
+      "vim",
+      "yaml",
+    }
+  end,
+}
