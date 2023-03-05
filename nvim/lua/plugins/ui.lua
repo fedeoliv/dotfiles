@@ -1,4 +1,23 @@
 return {
+  {
+    "xiyaowong/nvim-transparent",
+    opts = {
+      enable = true, -- boolean: enable transparent
+      extra_groups = { -- table/string: additional groups that should be cleared
+        -- In particular, when you set it to 'all', that means all available groups
+
+        -- example of akinsho/nvim-bufferline.lua
+        "BufferLineTabClose",
+        "BufferlineBufferSelected",
+        "BufferLineFill",
+        "BufferLineBackground",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+      },
+      exclude = {}, -- table: groups you don't want to clear
+      ignore_linked_group = true, -- boolean: don't clear a group that links to another group
+    },
+  },
   -- Smooth scrolling
   {
     "karb94/neoscroll.nvim",
@@ -23,10 +42,10 @@ return {
   },
 
   -- Tint inactive windows
-  {
-    "levouh/tint.nvim",
-    config = true,
-  },
+  -- {
+  --   "levouh/tint.nvim",
+  --   config = true,
+  -- },
 
   -- Expand window width with animation
   {
@@ -40,6 +59,14 @@ return {
       vim.o.winminwidth = 10
       vim.o.equalalways = false
       require("windows").setup()
+    end,
+  },
+
+  -- Notification manager
+  {
+    "rcarriga/nvim-notify",
+    opts = function(_, opts)
+      opts.background_colour = "#000000" -- 100% transparency
     end,
   },
 }
