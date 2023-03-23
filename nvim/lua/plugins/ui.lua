@@ -69,4 +69,7 @@ return {
       opts.background_colour = "#000000" -- 100% transparency
     end,
   },
+
+  -- Dim inactive portions of the code while editing using TreeSitter
+  "folke/twilight.nvim",
 }
