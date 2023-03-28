@@ -10,4 +10,7 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  -- w,e,b motions considering camelCase, snake_case and kebab-case as punctuation
+  { "chrisgrieser/nvim-spider", lazy = true },
 }
