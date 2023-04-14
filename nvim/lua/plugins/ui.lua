@@ -21,6 +21,7 @@ return {
   -- Smooth scrolling
   {
     "karb94/neoscroll.nvim",
+    event = "VeryLazy",
     opts = {
       -- All these keys will be mapped to their corresponding default scrolling animation
       mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
@@ -38,6 +39,7 @@ return {
   -- Sub-cursor to show current scroll direction
   {
     "gen740/SmoothCursor.nvim",
+    event = "VeryLazy",
     config = true,
   },
 
@@ -50,6 +52,7 @@ return {
   -- Expand window width with animation
   {
     "anuvyklack/windows.nvim",
+    event = "VeryLazy",
     dependencies = {
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim",
@@ -65,13 +68,20 @@ return {
   -- Notification manager
   {
     "rcarriga/nvim-notify",
+    event = "VeryLazy",
     opts = function(_, opts)
       opts.background_colour = "#000000" -- 100% transparency
     end,
   },
 
   -- Dim inactive portions of the code while editing using TreeSitter
-  "folke/twilight.nvim",
+  {
+    "folke/twilight.nvim",
+    event = "VeryLazy",
+  },
 
-  "shortcuts/no-neck-pain.nvim",
+  {
+    "shortcuts/no-neck-pain.nvim",
+    event = "VeryLazy",
+  },
 }

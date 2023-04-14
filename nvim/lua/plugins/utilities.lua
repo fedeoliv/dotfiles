@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    event = "VeryLazy",
     dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
@@ -8,12 +9,23 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
     end,
   },
-  "christoomey/vim-tmux-navigator", -- Seamless navigation between tmux panes and vim splits
-  "mfussenegger/nvim-jdtls", -- LSP extensions for eclipse jdtls
+
+  -- Seamless navigation between tmux panes and vim splits
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+  },
+
+  -- LSP extensions for eclipse jdtls
+  {
+    "mfussenegger/nvim-jdtls",
+    event = "VeryLazy",
+  },
 
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
+    event = "VeryLazy",
     -- build = "cd app && npm install",
     config = function()
       vim.fn["mkdp#util#install"]()
@@ -21,5 +33,8 @@ return {
   },
 
   -- w,e,b motions considering camelCase, snake_case and kebab-case as punctuation
-  { "chrisgrieser/nvim-spider", lazy = true },
+  {
+    "chrisgrieser/nvim-spider",
+    event = "VeryLazy",
+  },
 }

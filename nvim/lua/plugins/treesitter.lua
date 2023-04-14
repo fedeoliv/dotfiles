@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = "VeryLazy",
   opts = function(_, opts)
     opts.ensure_installed = {
       "bash",
