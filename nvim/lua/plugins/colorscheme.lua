@@ -1,4 +1,5 @@
 return {
+  { "catppuccin/nvim", enabled = false },
   {
     "bluz71/vim-nightfly-colors",
     name = "nightfly",
