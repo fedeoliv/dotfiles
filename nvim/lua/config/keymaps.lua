@@ -18,3 +18,6 @@ end, { desc = "Spider-b" })
 vim.keymap.set({ "n", "o", "x" }, "ge", function()
   require("spider").motion("ge")
 end, { desc = "Spider-ge" })
+
+-- open file_browser with the path of the current buffer
+vim.keymap.set("n", "<space>fb", ":Telescope file_browser", { noremap = true, silent = true })
