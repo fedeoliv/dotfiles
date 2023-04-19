@@ -44,10 +44,11 @@ return {
   },
 
   -- Tint inactive windows
-  -- {
-  --   "levouh/tint.nvim",
-  --   config = true,
-  -- },
+  {
+    "levouh/tint.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 
   -- Expand window width with animation
   {
