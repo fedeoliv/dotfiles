@@ -1,10 +1,10 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
 
 local opt = vim.opt
 
 opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
+opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 
 -- Global variables
 if vim.g.neovide then
@@ -12,9 +12,9 @@ if vim.g.neovide then
   vim.opt.linespace = 0
 
   -- Helper function for transparency formatting
-  local alpha = function()
-    return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
-  end
+  -- local alpha = function()
+  --   return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+  -- end
 
   -- transparency
   -- vim.g.neovide_transparency = 0.0
