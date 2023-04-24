@@ -6,7 +6,9 @@ local opt = vim.opt
 opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
 opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 
--- Global variables
+-- vim-move config
+vim.g.move_key_modifier_visualmode = "S"
+
 if vim.g.neovide then
   vim.o.guifont = "MonoLisa Nerd Font:h16"
   vim.opt.linespace = 0

@@ -30,6 +30,12 @@ return {
     end,
   },
 
+  -- move lines and selections up and down
+  {
+    "matze/vim-move",
+    event = "VeryLazy",
+  },
+
   -- w,e,b motions considering camelCase, snake_case and kebab-case as punctuation
   {
     "chrisgrieser/nvim-spider",
