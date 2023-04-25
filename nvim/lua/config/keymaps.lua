@@ -20,4 +20,4 @@ vim.keymap.set({ "n", "o", "x" }, "ge", function()
 end, { desc = "Spider-ge" })
 
 -- open file_browser with the path of the current buffer
-vim.keymap.set("n", "<space>fb", ":Telescope file_browser", { noremap = true, silent = true })
+vim.keymap.set("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
