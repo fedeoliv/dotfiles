@@ -8,6 +8,22 @@ return {
     end,
   },
 
+  -- Terminals management
+  {
+    {
+      "akinsho/toggleterm.nvim",
+      version = "*",
+      event = "VeryLazy",
+      opts = {
+        open_mapping = [[<c-\>]],
+        direction = "float",
+        float_opts = {
+          border = "curved",
+        },
+      },
+    },
+  },
+
   -- Seamless navigation between tmux panes and vim splits
   {
     "christoomey/vim-tmux-navigator",
