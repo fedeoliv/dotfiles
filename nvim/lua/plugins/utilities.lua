@@ -1,4 +1,10 @@
 return {
+  -- Edit filesystem like a buffer
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
   -- Code snippet
   {
     "L3MON4D3/LuaSnip",
