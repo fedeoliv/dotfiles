@@ -8,6 +8,7 @@ opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 
 -- vim-move config
 vim.g.move_key_modifier_visualmode = "S"
+vim.g.material_style = "deep ocean"
 
 if vim.g.neovide then
   vim.o.guifont = "MonoLisa Nerd Font:h16"

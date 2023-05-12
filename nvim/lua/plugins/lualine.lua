@@ -14,7 +14,7 @@ return {
       end
       return {
         options = {
-          theme = "nightfly",
+          theme = "material",
           component_separators = "|",
           section_separators = { left = "", right = "" },
         },
