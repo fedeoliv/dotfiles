@@ -23,25 +23,46 @@ return {
             { "mode", separator = { left = "" }, right_padding = 2 },
           },
           lualine_b = { "filename", "branch" },
+          -- lualine_c = {
+          --   {
+          --     "diagnostics",
+          --     symbols = {
+          --       error = icons.diagnostics.Error,
+          --       warn = icons.diagnostics.Warn,
+          --       info = icons.diagnostics.Info,
+          --       hint = icons.diagnostics.Hint,
+          --     },
+          --   },
+          --   { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          --   { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+          -- -- stylua: ignore
+          -- {
+          --   function() return require("nvim-navic").get_location() end,
+          --   cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+          -- },
+          -- },
           lualine_c = {
-            {
-              "diagnostics",
-              symbols = {
-                error = icons.diagnostics.Error,
-                warn = icons.diagnostics.Warn,
-                info = icons.diagnostics.Info,
-                hint = icons.diagnostics.Hint,
-              },
-            },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-          -- stylua: ignore
-          {
-            function() return require("nvim-navic").get_location() end,
-            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            function()
+              local fn = vim.fn.expand("%:~:.")
+              if vim.startswith(fn, "jdt://") then
+                fn = string.sub(fn, 0, string.find(fn, "?") - 1)
+              end
+              if fn == "" then
+                fn = "[No Name]"
+              end
+              if vim.bo.modified then
+                fn = fn .. " [+]"
+              end
+              if vim.bo.modifiable == false or vim.bo.readonly == true then
+                fn = fn .. " [-]"
+              end
+              local tfn = vim.fn.expand("%")
+              if tfn ~= "" and vim.bo.buftype == "" and vim.fn.filereadable(tfn) == 0 then
+                fn = fn .. " [New]"
+              end
+              return fn
+            end,
           },
-          },
-          -- lualine_c = { "fileformat" },
           lualine_x = {
             -- stylua: ignore
             {
