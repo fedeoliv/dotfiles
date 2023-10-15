@@ -1,0 +1,40 @@
+theme = "dark_plus"
+
+[editor]
+line-number = "relative"
+mouse = false
+bufferline = "always"
+color-modes = true
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"
+
+[keys.normal.g]
+x = ":buffer-close"
+j = "jump_backward"
+k = "jump_forward"
