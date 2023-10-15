@@ -17,6 +17,7 @@ return {
   {
     {
       "akinsho/toggleterm.nvim",
+
       version = "*",
       event = "VeryLazy",
       opts = {
@@ -39,16 +40,6 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     event = "VeryLazy",
-  },
-
-  -- Markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    event = "VeryLazy",
-    -- build = "cd app && npm install",
-    config = function()
-      vim.fn["mkdp#util#install"]()
-    end,
   },
 
   -- Edit Markdown table
