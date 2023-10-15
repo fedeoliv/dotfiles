@@ -41,3 +41,5 @@ if vim.g.neovide then
 else
   vim.g.nightflyTransparent = true --transparent mode from nvim-nightly-colors
 end
+
+-- vim.g.gruvbox_material_background = "hard"

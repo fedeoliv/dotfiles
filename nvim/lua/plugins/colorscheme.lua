@@ -5,13 +5,6 @@ return {
     name = "nightfly",
     lazy = true,
     priority = 1000,
-    enabled = false,
-  },
-  {
-    "Yazeed1s/minimal.nvim",
-    name = "minimal",
-    lazy = false,
-    enabled = false,
   },
   {
     "kvrohit/mellow.nvim",
@@ -23,11 +16,18 @@ return {
     "marko-cerovac/material.nvim",
     lazy = true,
     priority = 1000,
+    enabled = false,
+  },
+  {
+    "rockyzhang24/arctic.nvim",
+    branch = "v2",
+    dependencies = { "rktjmp/lush.nvim" },
+    enabled = false,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "material",
+      colorscheme = "nightfly",
     },
   },
 }

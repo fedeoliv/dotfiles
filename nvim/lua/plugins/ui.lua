@@ -36,13 +36,6 @@ return {
     },
   },
 
-  -- Sub-cursor to show current scroll direction
-  {
-    "gen740/SmoothCursor.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
-
   -- Tint inactive windows
   {
     "levouh/tint.nvim",
