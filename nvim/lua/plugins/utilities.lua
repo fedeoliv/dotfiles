@@ -2,8 +2,12 @@ return {
   -- Edit filesystem like a buffer
   {
     "stevearc/oil.nvim",
-    opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
   },
   -- Code snippet
   {
@@ -32,8 +36,23 @@ return {
 
   -- Seamless navigation between tmux panes and vim splits
   {
-    "christoomey/vim-tmux-navigator",
+    "alexghergh/nvim-tmux-navigation",
     event = "VeryLazy",
+    config = function()
+      local nvim_tmux_nav = require("nvim-tmux-navigation")
+      nvim_tmux_nav.setup({
+        disable_when_zoomed = true,
+        -- defaults to false
+        keybindings = {
+          left = "<C-h>",
+          down = "<C-j>",
+          up = "<C-k>",
+          right = "<C-l>",
+          last_active = "<C-\\>",
+          next = "<C-Space>",
+        },
+      })
+    end,
   },
 
   -- LSP extensions for eclipse jdtls
@@ -51,5 +70,27 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "EditMarkdownTable",
     event = "VeryLazy",
+  },
+
+  -- Note taking
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
+      })
+    end,
   },
 }

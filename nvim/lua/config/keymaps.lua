@@ -3,6 +3,13 @@
 -- Add any additional keymaps here
 local keymap = vim.keymap.set
 
+keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
+keymap("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
+keymap("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
+keymap("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
+keymap("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { silent = true })
+keymap("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
+
 -- nvim-spider
 keymap({ "n", "o", "x" }, "w", function()
   require("spider").motion("w")
@@ -21,7 +28,7 @@ keymap({ "n", "o", "x" }, "ge", function()
 end, { desc = "Spider-ge" })
 
 -- open file_browser with the path of the current buffer
-keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
+-- keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
 
 -- ### lspsaga ###
 -- LSP finder - Find the symbol's definition
@@ -31,7 +38,7 @@ keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, si
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -47,7 +54,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -57,8 +64,7 @@ keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
 keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Go to type definition
-keymap("n","gt", "<cmd>Lspsaga goto_type_definition<CR>")
-
+keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
@@ -88,7 +94,7 @@ keymap("n", "]E", function()
 end)
 
 -- Toggle outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
 -- If there is no hover doc,
@@ -110,4 +116,4 @@ keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
-keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
