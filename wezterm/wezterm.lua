@@ -84,4 +84,6 @@ config.colors = {
 	-- quick_select_match_fg = { Color = "#ffffff" },
 }
 
+config.enable_tab_bar = false
+
 return config
