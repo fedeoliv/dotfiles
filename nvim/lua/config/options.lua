@@ -8,6 +8,6 @@ opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 
 -- vim-move config
 vim.g.move_key_modifier_visualmode = "S"
-vim.g.material_style = "deep ocean"
+-- vim.g.material_style = "deep ocean"
 
--- vim.g.nightflyTransparent = true --transparent mode from nvim-nightly-colors
+vim.g.nightflyTransparent = true --transparent mode from nvim-nightly-colors

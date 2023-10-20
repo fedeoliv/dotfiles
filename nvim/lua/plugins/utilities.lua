@@ -80,17 +80,41 @@ return {
     config = function()
       require("neorg").setup({
         load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.keybinds"] = {
+            config = {
+              hook = function(keybinds)
+                -- keybinds.remap_event("norg", "n", "<C-Space>", "core.qol.todo_items.todo.task_done")
+
+                keybinds.remap_key("norg", "n", "<C-Space>", "<Leader>")
+              end,
+            },
+          },
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+              name = "[Neorg]",
+            },
+          },
+          ["core.dirman"] = {
             config = {
               workspaces = {
                 notes = "~/notes",
               },
+              default_workspace = "notes",
             },
           },
         },
       })
+
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
     end,
+  },
+  {
+    "lukas-reineke/headlines.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    opts = {},
   },
 }
