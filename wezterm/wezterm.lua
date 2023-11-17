@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = "Catppuccin Mocha"
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font", { weight = "Regular", italic = false })
 config.font_size = 15.0
