@@ -9,8 +9,9 @@ end
 config.color_scheme = "Catppuccin Mocha"
 config.window_decorations = "RESIZE"
 
-config.font = wezterm.font("CaskaydiaCove Nerd Font", { weight = "Regular", italic = false })
-config.font_size = 17.0
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font", { weight = "Regular", italic = false })
+config.font = wezterm.font("MonoLisaMedium Nerd Font", { weight = "Regular", italic = false })
+config.font_size = 14.0
 
 config.enable_tab_bar = false
 
