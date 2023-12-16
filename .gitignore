@@ -3,3 +3,4 @@ containers/*
 Microsoft\\VisualStudio Services/*
 fontforge/
 fonts/
+tmux/plugins/*
