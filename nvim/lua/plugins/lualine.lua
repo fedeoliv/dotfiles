@@ -14,7 +14,7 @@ return {
       end
       return {
         options = {
-          theme = "nightfly",
+          theme = "catppuccin-mocha",
           component_separators = "|",
           section_separators = { left = "", right = "" },
         },
@@ -23,24 +23,6 @@ return {
             { "mode", separator = { left = "" }, right_padding = 2 },
           },
           lualine_b = { "filename", "branch" },
-          -- lualine_c = {
-          --   {
-          --     "diagnostics",
-          --     symbols = {
-          --       error = icons.diagnostics.Error,
-          --       warn = icons.diagnostics.Warn,
-          --       info = icons.diagnostics.Info,
-          --       hint = icons.diagnostics.Hint,
-          --     },
-          --   },
-          --   { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          --   { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-          -- -- stylua: ignore
-          -- {
-          --   function() return require("nvim-navic").get_location() end,
-          --   cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-          -- },
-          -- },
           lualine_c = {
             function()
               local fn = vim.fn.expand("%:~:.")
