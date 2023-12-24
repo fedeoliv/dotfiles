@@ -68,7 +68,7 @@ sketchybar --default "${defaults[@]}"
 # Left
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
+# source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Center
@@ -80,7 +80,7 @@ source "$ITEM_DIR/brew.sh" # outdated brew packages
 # source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh" # battery level, only displayed when ≤ 50%
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/cpu.sh" # C utility to show cpu usage
 # source "$ITEM_DIR/svim.sh"
 
 sketchybar --hotload on
