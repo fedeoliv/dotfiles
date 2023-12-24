@@ -16,7 +16,6 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
 
-
 #### Shortcuts for swapping windows
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
@@ -28,6 +27,12 @@ ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
 ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
+
+# shortcuts to trigger sketchybar events
+lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
+shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+lalt - f : yabai -m window --toggle zoom-parent; sketchybar --trigger window_focus
+shift + lalt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
 
 # Move window to display left and right
 shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
