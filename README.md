@@ -15,3 +15,4 @@ Configuration files tweaked to my dev environment needs on macOS.
 * [skhd](https://github.com/koekeishiya/skhd) as the hotkey deamon with keybindings configured for yabai
 * [SketchyBar](https://github.com/FelixKratz/SketchyBar) as a custom macOS status bar
 * [neofetch](https://github.com/dylanaraps/neofetch) as a CLI system info tool
+
