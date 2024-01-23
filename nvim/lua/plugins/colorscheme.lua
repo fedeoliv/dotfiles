@@ -4,7 +4,13 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      flavour = "mocha",
+      no_italic = false,
       transparent_background = true,
+      styles = {
+        comments = {},
+        conditionals = {},
+      },
     },
   },
   -- {
