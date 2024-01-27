@@ -9,7 +9,7 @@ Configuration files tweaked to my dev environment needs on macOS.
 * [WezTerm](https://github.com/wez/wezterm) as the GPU-accelerated terminal
 * [catppuccin](https://github.com/catppuccin/catppuccin) `Mocha` colorscheme used in WezTerm, tmux and Neovim
 * `CaskaydiaCove Nerd Font` (available on [nerdfonts](https://www.nerdfonts.com/font-downloads) page)
-* [Neovim](https://neovim.io/) configured as an IDE
+* [Neovim](https://neovim.io/) configured as an IDE. Currently tweaked for Python development.
 * [tmux](https://github.com/tmux/tmux/wiki) as the terminal multiplexer
 * [yabai](https://github.com/koekeishiya/yabai) as the tiling window manager
 * [skhd](https://github.com/koekeishiya/skhd) as the hotkey deamon with keybindings configured for yabai
