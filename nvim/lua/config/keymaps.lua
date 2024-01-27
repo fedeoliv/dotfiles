@@ -30,6 +30,10 @@ end, { desc = "Spider-ge" })
 -- open file_browser with the path of the current buffer
 -- keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
 
+-- Telescope
+
+keymap("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
+
 -- LSP
 
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>") --find the symbol's definition
