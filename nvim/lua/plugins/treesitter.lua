@@ -69,6 +69,7 @@ return {
         "python",
         "query",
         "regex",
+        "requirements",
         "terraform",
         "toml",
         "tsx",
