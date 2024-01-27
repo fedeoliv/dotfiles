@@ -5,7 +5,7 @@ return {
     priority = 1000,
     opts = {
       flavour = "mocha",
-      no_italic = false,
+      no_italic = true,
       transparent_background = true,
       styles = {
         comments = {},
