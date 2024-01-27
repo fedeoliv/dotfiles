@@ -73,3 +73,6 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+
+-- lazygit
+keymap("n", "<leader>lg", "<cmd>LazyGit<CR>")
