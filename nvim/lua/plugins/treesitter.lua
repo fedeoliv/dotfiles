@@ -64,7 +64,6 @@ return {
         "markdown",
         "markdown_inline",
         "mermaid",
-        "norg",
         "go",
         "python",
         "query",
