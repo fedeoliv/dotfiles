@@ -21,6 +21,15 @@ return {
         { name = "py-requirements" },
       }))
 
+      opts.window = {
+        completion = {
+          border = "rounded",
+          -- winhighlight = "Normal:Pmenu",
+        },
+        documentation = {
+          winhighlight = "Normal:Pmenu",
+        },
+      }
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
