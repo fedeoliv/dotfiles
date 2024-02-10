@@ -1,6 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+
 local keymap = vim.keymap.set
 
 keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
@@ -31,11 +31,12 @@ end, { desc = "Spider-ge" })
 -- keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
 
 -- Telescope
-
 keymap("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
 
--- LSP
+-- Markdown
+keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>")
 
+-- LSP
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>") --find the symbol's definition
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>") --code action
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>") -- rename all occurrences of the hovered word in the file
