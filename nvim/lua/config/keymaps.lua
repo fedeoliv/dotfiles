@@ -10,6 +10,14 @@ keymap("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
 keymap("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { silent = true })
 keymap("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
 
+-- smart dd: only yank the line if it's not empty
+keymap("n", "dd", function()
+  if vim.fn.getline(".") == "" then
+    return '"_dd'
+  end
+  return "dd"
+end, { expr = true })
+
 -- nvim-spider
 keymap({ "n", "o", "x" }, "w", function()
   require("spider").motion("w")
