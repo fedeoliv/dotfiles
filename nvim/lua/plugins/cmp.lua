@@ -54,6 +54,8 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      opts.performance = { max_view_entries = 7 }
     end,
   },
 }
