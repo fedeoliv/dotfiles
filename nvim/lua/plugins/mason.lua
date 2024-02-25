@@ -60,7 +60,7 @@ return {
           "emmet_ls",
           -- "omnisharp",
           "jdtls",
-          -- "yamlls",
+          "yamlls",
           -- "gopls",
           -- "lemminx",
           "vimls",
