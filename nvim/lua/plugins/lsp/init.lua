@@ -90,7 +90,7 @@ return {
           border = "rounded",
           winblend = 0,
           expand = "",
-          collaspe = "",
+          collapse = "",
           preview = " ",
           code_action = "💡",
           diagnostic = "🐞",
@@ -111,7 +111,7 @@ return {
           custom_sort = nil,
           keys = {
             jump = "o",
-            expand_collaspe = "u",
+            expand_collapse = "u",
             quit = ";",
           },
         },
@@ -125,7 +125,7 @@ return {
             tabe = "t",
             jump = "o",
             quit = ";",
-            expand_collaspe = "u",
+            expand_collapse = "u",
           },
         },
       })
