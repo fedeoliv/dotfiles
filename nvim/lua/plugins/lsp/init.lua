@@ -14,7 +14,6 @@ return {
           lines_above = 0,
           lines_below = 10,
         },
-
         code_action = {
           num_shortcut = true,
           keys = {
@@ -22,13 +21,11 @@ return {
             exec = "<CR>",
           },
         },
-
         scroll_preview = {
           scroll_down = "<C-f>",
           scroll_up = "<C-b>",
         },
         request_timeout = 2000,
-
         lightbulb = {
           enable = false,
           enable_in_insert = true,
@@ -36,13 +33,11 @@ return {
           sign_priority = 40,
           virtual_text = true,
         },
-
         rename = {
           quit = ";",
           exec = "<CR>",
           in_select = false,
         },
-
         finder = {
           edit = { "o", "<CR>" },
           vsplit = "s",
@@ -50,7 +45,6 @@ return {
           tabe = "t",
           quit = { ";", "<ESC>" },
         },
-
         diagnostic = {
           insert_winblend = 0,
           jump_num_shortcut = true,
@@ -67,7 +61,6 @@ return {
             quit = ";",
           },
         },
-
         symbol_in_winbar = {
           enable = false,
           separator = "  ",
@@ -75,7 +68,6 @@ return {
           show_file = true,
           folder_level = 2,
         },
-
         definition = {
           edit = "<C-c>o",
           vsplit = "<C-c>v",
@@ -84,7 +76,6 @@ return {
           quit = ";",
           close = "<Esc>",
         },
-
         ui = {
           theme = "round",
           border = "rounded",
@@ -99,7 +90,6 @@ return {
           hover = " ",
           kind = {},
         },
-
         outline = {
           win_position = "right",
           win_with = "",
@@ -115,7 +105,6 @@ return {
             quit = ";",
           },
         },
-
         callhierarchy = {
           show_detail = false,
           keys = {
@@ -136,5 +125,13 @@ return {
   {
     "hinell/lsp-timeout.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
+  },
+
+  -- show lsp progress
+  {
+    "j-hui/fidget.nvim",
+    opts = {
+      -- options
+    },
   },
 }

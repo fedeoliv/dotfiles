@@ -24,3 +24,6 @@ Grafana
 YARP
 openai
 Rebase
+config
+entrypoint
+Kubernetes
