@@ -27,3 +27,4 @@ Rebase
 config
 entrypoint
 Kubernetes
+OpenTelemetry
