@@ -24,32 +24,15 @@ return {
           },
           lualine_b = { "filename", "branch" },
           lualine_c = {
-            function()
-              local fn = vim.fn.expand("%:~:.")
-              if vim.startswith(fn, "jdt://") then
-                fn = string.sub(fn, 0, string.find(fn, "?") - 1)
-              end
-              if fn == "" then
-                fn = "[No Name]"
-              end
-              if vim.bo.modified then
-                fn = fn .. " [+]"
-              end
-              if vim.bo.modifiable == false or vim.bo.readonly == true then
-                fn = fn .. " [-]"
-              end
-              local tfn = vim.fn.expand("%")
-              if tfn ~= "" and vim.bo.buftype == "" and vim.fn.filereadable(tfn) == 0 then
-                fn = fn .. " [New]"
-              end
-              return fn
-            end,
+            -- harpoon-lualine
+            "%=",
+            { "harpoon2" },
           },
           lualine_x = {
             -- stylua: ignore
             {
               function() return "  " .. require("dap").status() end,
-              cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+              cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
               color = fg("Debug"),
             },
             -- stylua: ignore
