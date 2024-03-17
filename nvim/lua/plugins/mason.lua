@@ -49,23 +49,17 @@ return {
         require("lspconfig.ui.windows").default_options.border = "rounded"
 
         local auto_install = {
-          -- "jsonls",
           "lua_ls",
           "clangd",
           "pyright",
-          -- "intelephense",
+          "ruff_lsp",
           "cssls",
           "html",
           "tsserver",
           "emmet_ls",
-          -- "omnisharp",
           "jdtls",
           "yamlls",
-          -- "gopls",
-          -- "lemminx",
           "vimls",
-          -- "cmake",
-          -- "powershell_es",
         }
 
         mason.setup({
@@ -109,6 +103,35 @@ return {
             lspconfig[server_name].setup(opts)
           end,
         })
+      end,
+    },
+  },
+  opts = {
+    servers = {
+      pyright = {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { "*" },
+            },
+          },
+        },
+      },
+      ruff_lsp = {},
+    },
+    setup = {
+      ruff_lsp = function()
+        require("lazyvim.util").lsp.on_attach(function(client, _)
+          if client.name == "ruff_lsp" then
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+          end
+        end)
       end,
     },
   },
