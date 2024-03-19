@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.editor.outline",
+    "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.python",
