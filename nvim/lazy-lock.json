@@ -49,6 +49,7 @@
   "neoscroll.nvim": { "branch": "master", "commit": "21d52973bde32db998fc8b6590f87eb3c3c6d8e4" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "8befa8f6f2cb22a95a30c4ccae0371ef2d8e05d0" },
   "noice.nvim": { "branch": "main", "commit": "bf67d70bd7265d075191e7812d8eb42b9791f737" },
+  "none-ls-extras.nvim": { "branch": "main", "commit": "4f6ba0c4a317a630157bc02fad110fcd826e9494" },
   "none-ls.nvim": { "branch": "main", "commit": "18910d09d21d7df339805343bfe4a2b2e41c057b" },
   "nui.nvim": { "branch": "main", "commit": "cbd2668414331c10039278f558630ed19b93e69b" },
   "nvim-cmp": { "branch": "main", "commit": "43b460a2bd02fd898e67f5f1f65dfd1cce26203a" },
