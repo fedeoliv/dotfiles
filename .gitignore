@@ -4,3 +4,4 @@ Microsoft\\VisualStudio Services/*
 fontforge/
 fonts/
 tmux/plugins/*
+.gitconfig
