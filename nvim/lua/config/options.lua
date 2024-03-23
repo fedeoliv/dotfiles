@@ -10,3 +10,9 @@ opt.statuscolumn = "%r" -- Show relative numbers
 opt.conceallevel = 2
 
 vim.g.move_key_modifier_visualmode = "S"
+
+-- Providers
+vim.g.python_host_prog = vim.fn.system("which python3")
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
