@@ -35,11 +35,10 @@ keymap({ "n", "o", "x" }, "ge", function()
   require("spider").motion("ge")
 end, { desc = "Spider-ge" })
 
--- open file_browser with the path of the current buffer
--- keymap("n", "<space>bf", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true })
-
--- Telescope
-keymap("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
+--- fzf-lua
+keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+keymap("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+keymap("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
 
 -- Markdown
 keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>")
@@ -82,3 +81,6 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+
+-- rest.nvim
+keymap("n", "<leader>rr", "<cmd>Rest run<CR>")
