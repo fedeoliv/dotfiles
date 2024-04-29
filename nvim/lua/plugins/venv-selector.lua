@@ -6,4 +6,5 @@ return {
     { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Python venv" },
     { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Retrieve Python venv from cache" },
   },
+  ft = { "py" },
 }

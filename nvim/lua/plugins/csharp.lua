@@ -9,4 +9,5 @@ return {
     require("mason").setup() -- Mason setup must run before csharp
     require("csharp").setup()
   end,
+  ft = { "cs" },
 }
