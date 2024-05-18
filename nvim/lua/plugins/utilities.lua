@@ -41,6 +41,7 @@ return {
   -- LSP extensions for eclipse jdtls
   {
     "mfussenegger/nvim-jdtls",
+    enabled = false,
     event = "VeryLazy",
   },
 }
