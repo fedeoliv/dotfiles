@@ -3,12 +3,19 @@
 
 local opt = vim.opt
 
-opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
+-- opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
 
 -- opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 opt.statuscolumn = "%r" -- Show relative numbers
 opt.conceallevel = 2
 opt.laststatus = 0
+
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.opt.listchars = { tab = "-->", multispace = " ", trail = "", extends = "⟩", precedes = "⟨" }
 
 vim.g.move_key_modifier_visualmode = "S"
 
