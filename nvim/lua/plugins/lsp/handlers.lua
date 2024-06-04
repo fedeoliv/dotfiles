@@ -4,6 +4,10 @@ local keymap = vim.keymap.set
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 M.capabilities = cmp_nvim_lsp.default_capabilities()
+M.capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
 
 M.setup = function()
   local signs = { Error = "", Warn = "", Hint = "", Info = "" }
