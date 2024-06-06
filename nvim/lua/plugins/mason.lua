@@ -90,6 +90,9 @@ return {
                 return
               end
             end
+
+            require("ufo").setup()
+
             local opts = {
               on_attach = require("plugins.lsp.handlers").on_attach,
               capabilities = require("plugins.lsp.handlers").capabilities,
