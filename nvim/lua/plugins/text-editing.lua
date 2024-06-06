@@ -8,12 +8,6 @@ return {
     end,
   },
   {
-    "lukas-reineke/headlines.nvim",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    opts = {},
-  },
-
-  {
     "preservim/vim-pencil",
   },
 }
