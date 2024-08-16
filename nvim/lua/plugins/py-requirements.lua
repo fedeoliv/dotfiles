@@ -9,4 +9,5 @@ return {
       file_patterns = { "requirements.txt" },
     })
   end,
+  ft = { "python" },
 }
