@@ -30,7 +30,7 @@ return {
           "ruff_lsp",
           "cssls",
           "html",
-          "tsserver",
+          "ts_ls",
           "emmet_ls",
           "jdtls",
           "yamlls",
