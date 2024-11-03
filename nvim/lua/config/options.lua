@@ -26,3 +26,6 @@ vim.g.python_host_prog = vim.fn.system("which python3")
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
+
+vim.g.tundra_biome = "arctic" -- 'arctic' or 'jungle'
+vim.opt.background = "dark"

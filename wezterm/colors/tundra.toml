@@ -1,0 +1,40 @@
+[metadata]
+name = "tundra"
+origin_url = "https://github.com/sam4llis/nvim-tundra/"
+ 
+[colors]
+background = "#111827"
+foreground = "#D1D5DB"
+cursor_bg = "#D1D5DB"
+cursor_fg = "#111827"
+cursor_border = "#111827"
+selection_bg = "#374151"  
+selection_fg = "#DDD6FE"  
+scrollbar_thumb = "#6B7280"  
+split = "#6B7280"  
+  
+ansi = [  
+  "#6B7280",  
+  "#FCA5A5",  
+  "#B1E3AD",  
+  "#FBC19D",  
+  "#BAE6FD",  
+  "#957FB8",  
+  "#DDD6FE",  
+  "#A5F3FC",  
+]  
+  
+brights = [  
+  "#6B7280",  
+  "#FCA5A5",  
+  "#B1E3AD",  
+  "#FBC19D",  
+  "#BAE6FD",  
+  "#938AA9",  
+  "#DDD6FE",  
+  "#A5F3FC",  
+]  
+  
+# Additional settings  
+compose_cursor = "#D1D5DB"  # Assuming you want a compose cursor color, you can adjust as needed  
+visual_bell = "#DDD6FE"  # Assuming a visual bell color, you can adjust as needed

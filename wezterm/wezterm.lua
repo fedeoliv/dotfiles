@@ -11,7 +11,7 @@ config.enable_tab_bar = false
 config.default_cursor_style = "BlinkingBar"
 
 -- window
-config.window_background_opacity = 0.90
+-- config.window_background_opacity = 0.95
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE" -- disable title bar without disabling the resiable border
 config.macos_window_background_blur = 30
@@ -22,33 +22,12 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "tundra"
 
+config.font = wezterm.font("MonoLisaMedium Nerd Font", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("CaskaydiaCove Nerd Font", { weight = "Regular", italic = false })
--- config.font = wezterm.font("MonoLisaMedium Nerd Font", { weight = "Regular", italic = false })
-config.font = wezterm.font("JetBrains Mono", { weight = "Medium", italic = false })
-config.font_size = 16.0
-
-config.background = {
-	{
-		source = {
-			File = "/Users/" .. os.getenv("USER") .. "/Pictures/wallpapers/mountains-gradient.jpg",
-		},
-		hsb = {
-			hue = 1.0,
-			saturation = 1.00,
-			brightness = 0.02,
-		},
-	},
-	{
-		source = {
-			Color = "#282c35",
-		},
-		width = "100%",
-		height = "100%",
-		opacity = 0.45,
-	},
-}
+-- config.font = wezterm.font("JetBrains Mono", { weight = "Medium", italic = false })
+config.font_size = 15.0
 
 -- URLs in Markdown files are not handled properly by default
 -- Source: https://github.com/wez/wezterm/issues/3803#issuecomment-1608954312

@@ -1,32 +1,18 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
+    "sam4llis/nvim-tundra",
     opts = {
-      flavour = "mocha",
-      no_italic = true,
       transparent_background = true,
-      styles = {
-        comments = {},
-        conditionals = {},
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
+      dim_inactive_windows = {
+        enabled = false,
+        color = nil,
       },
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "tundra",
     },
   },
 }
