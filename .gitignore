@@ -7,3 +7,4 @@ tmux/plugins/*
 .gitconfig
 karabiner
 thefuck
+uv
