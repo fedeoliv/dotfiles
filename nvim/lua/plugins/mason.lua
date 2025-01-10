@@ -27,7 +27,7 @@ return {
           "lua_ls",
           "clangd",
           "basedpyright",
-          "ruff_lsp",
+          "ruff",
           "cssls",
           "html",
           "ts_ls",
