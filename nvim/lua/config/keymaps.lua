@@ -35,11 +35,6 @@ keymap({ "n", "o", "x" }, "ge", function()
   require("spider").motion("ge")
 end, { desc = "Spider-ge" })
 
---- fzf-lua
-keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
-keymap("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
-keymap("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
-
 -- Markdown
 keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>")
 
