@@ -1,14 +1,6 @@
 local M = {}
 local keymap = vim.keymap.set
 
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-M.capabilities = cmp_nvim_lsp.default_capabilities()
-M.capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-
 M.setup = function()
   local signs = { Error = "", Warn = "", Hint = "", Info = "" }
   for type, icon in pairs(signs) do
@@ -51,8 +43,11 @@ local function lsp_keymaps(bufnr)
   local buf_opts = { buffer = bufnr, silent = true }
   -- keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
   keymap("n", "gD", ":Lspsaga lsp_finder<CR>", buf_opts)
+
   keymap("n", "gd", ":Lspsaga goto_definition<CR>", buf_opts)
   -- keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
+  -- keymap("n", "gd", "<cmd>lua require('csharp').go_to_definition()<CR>", buf_opts)
+
   keymap("n", "gl", ":Lspsaga show_line_diagnostics<CR>", buf_opts)
   keymap("n", "gc", ":Lspsaga show_cursor_diagnostics<CR>", buf_opts)
   keymap("n", "gp", ":Lspsaga peek_definition<CR>", buf_opts)
