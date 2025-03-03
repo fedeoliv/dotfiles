@@ -1,6 +1,18 @@
 return {
   "Saghen/blink.cmp",
+  dependencies = "rafamadriz/friendly-snippets",
   opts = {
+    keymap = {
+      preset = "none",
+      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
+      cmdline = {
+        preset = "default",
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      },
+    },
     completion = {
       menu = {
         draw = {
