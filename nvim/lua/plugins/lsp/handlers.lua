@@ -1,6 +1,8 @@
 local M = {}
 local keymap = vim.keymap.set
 
+local navic = require("nvim-navic")
+
 M.setup = function()
   local signs = { Error = "", Warn = "", Hint = "", Info = "" }
   for type, icon in pairs(signs) do
@@ -104,6 +106,8 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight(client, bufnr)
+  navic.attach(client, bufnr)
+
   vim.api.nvim_create_user_command("FormatOnSaveToggle", function()
     if vim.fn.exists("#Format on save#BufWritePost") == 0 then
       enable_format_on_save()
