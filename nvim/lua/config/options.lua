@@ -8,7 +8,7 @@ local opt = vim.opt
 -- opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 opt.statuscolumn = "%r" -- Show relative numbers
 opt.conceallevel = 2
-opt.laststatus = 0
+opt.laststatus = 2
 
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99
