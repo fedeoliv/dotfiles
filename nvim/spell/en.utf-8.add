@@ -28,3 +28,5 @@ config
 entrypoint
 Kubernetes
 OpenTelemetry
+LLMs
+agentic
