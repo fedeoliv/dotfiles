@@ -3,8 +3,11 @@
 
 local opt = vim.opt
 
--- opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
+opt.numberwidth = 3
+opt.signcolumn = "yes:1"
+opt.statuscolumn = "%l%s"
 
+-- opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
 -- opt.statuscolumn = "%l %r" -- Show both line and relative numbers
 opt.statuscolumn = "%r" -- Show relative numbers
 opt.conceallevel = 2
@@ -19,7 +22,10 @@ vim.opt.listchars = { tab = "-->", multispace = " ", trail = "ï‘„", extends = "â
 
 vim.g.move_key_modifier_visualmode = "S"
 
-vim.diagnostic.config({ float = { border = "single" } })
+vim.diagnostic.config({
+  float = { border = "single" },
+  virtual_text = true,
+})
 
 -- Providers
 vim.g.python_host_prog = vim.fn.system("which python3")
