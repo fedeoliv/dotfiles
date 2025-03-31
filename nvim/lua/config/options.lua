@@ -5,11 +5,8 @@ local opt = vim.opt
 
 opt.numberwidth = 3
 opt.signcolumn = "yes:1"
-opt.statuscolumn = "%l%s"
+opt.statuscolumn = "%l %s"
 
--- opt.winbar = "%=%m %f" -- Add file path on the twinbar top right
--- opt.statuscolumn = "%l %r" -- Show both line and relative numbers
-opt.statuscolumn = "%r" -- Show relative numbers
 opt.conceallevel = 2
 opt.laststatus = 2
 
