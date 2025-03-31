@@ -7,6 +7,9 @@ vim.lsp.enable({
   "ruff",
   "ruff-lsp",
 
+  -- java
+  "jdtls",
+
   --markdown
   "marksman",
 })
