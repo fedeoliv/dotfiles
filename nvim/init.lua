@@ -12,4 +12,7 @@ vim.lsp.enable({
 
   --markdown
   "marksman",
+
+  --xml
+  "lemminx",
 })
