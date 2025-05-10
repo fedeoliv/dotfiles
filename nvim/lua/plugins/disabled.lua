@@ -23,8 +23,8 @@ return {
     "nvim-lualine/lualine.nvim",
     enabled = true,
   },
-  {
-    "neovim/nvim-lspconfig",
-    enabled = false,
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   enabled = false,
+  -- },
 }
