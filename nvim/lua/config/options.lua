@@ -30,5 +30,9 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
 
-vim.g.tundra_biome = "arctic" -- 'arctic' or 'jungle'
 vim.opt.background = "dark"
+
+vim.opt.spellfile = {
+  vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+  vim.fn.stdpath("config") .. "/spell/pt.utf-8.add",
+}
