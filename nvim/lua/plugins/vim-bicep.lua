@@ -1,3 +1,0 @@
-return {
-  "carlsmedstad/vim-bicep",
-}
