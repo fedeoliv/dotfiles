@@ -9,5 +9,6 @@ return {
   },
   {
     "preservim/vim-pencil",
+    event = "VeryLazy",
   },
 }
