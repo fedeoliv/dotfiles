@@ -13,6 +13,9 @@ vim.lsp.enable({
   --markdown
   "marksman",
 
+  -- swift, objective c
+  "sourcekit",
+
   --xml
   "lemminx",
 })
