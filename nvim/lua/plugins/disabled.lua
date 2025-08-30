@@ -23,6 +23,10 @@ return {
     "nvim-lualine/lualine.nvim",
     enabled = true,
   },
+  {
+    "echasnovski/mini.icons",
+    enabled = false,
+  },
   -- {
   --   "neovim/nvim-lspconfig",
   --   enabled = false,
