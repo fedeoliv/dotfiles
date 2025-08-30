@@ -21,7 +21,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    enabled = true,
+    enabled = false,
   },
   {
     "echasnovski/mini.icons",
