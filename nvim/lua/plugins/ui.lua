@@ -48,13 +48,4 @@ return {
       require("windows").setup()
     end,
   },
-
-  -- Notification manager
-  {
-    "rcarriga/nvim-notify",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.background_colour = "#000000" -- 100% transparency
-    end,
-  },
 }
