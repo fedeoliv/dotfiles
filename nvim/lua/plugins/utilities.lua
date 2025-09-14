@@ -2,7 +2,9 @@ return {
   -- Edit filesystem like a buffer
   {
     "stevearc/oil.nvim",
+    event = "VeryLazy",
     opts = {
+      default_file_explorer = true,
       view_options = {
         show_hidden = true,
       },
