@@ -24,7 +24,7 @@ return {
     enabled = false,
   },
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     enabled = false,
   },
   {
