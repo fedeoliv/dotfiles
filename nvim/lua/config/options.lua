@@ -1,8 +1,9 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.swapfile = false
+vim.opt.undofile = true
 
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = "yes:1"
@@ -35,9 +36,3 @@ vim.g.python_host_prog = vim.fn.system("which python3")
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
-
--- diagnostics
-vim.diagnostic.config({
-  float = { border = "single" },
-  virtual_text = true,
-})

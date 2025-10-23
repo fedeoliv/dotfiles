@@ -1,0 +1,45 @@
+{
+  "plugins": {
+    "LuaSnip": [],
+    "boole.nvim": {
+      "rev": "7b4a3da",
+      "src": "https://github.com/nat-418/boole.nvim"
+    },
+    "mason.nvim": [],
+    "mini.pairs": {
+      "rev": "b9aada8",
+      "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "mini.pick": {
+      "rev": "96ee37d",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
+    "mini.surround": {
+      "rev": "444e155",
+      "src": "https://github.com/nvim-mini/mini.surround"
+    },
+    "neoscroll.nvim": {
+      "rev": "f957373",
+      "src": "https://github.com/karb94/neoscroll.nvim"
+    },
+    "nvim-lspconfig": [],
+    "nvim-spider": {
+      "rev": "220efa6",
+      "src": "https://github.com/chrisgrieser/nvim-spider"
+    },
+    "nvim-tmux-navigation": {
+      "rev": "4898c98",
+      "src": "https://github.com/alexghergh/nvim-tmux-navigation",
+      "version": "'main'"
+    },
+    "nvim-treesitter": {
+      "version": "'main'"
+    },
+    "oil.nvim": [],
+    "smear-cursor.nvim": {
+      "rev": "abfa583",
+      "src": "https://github.com/sphamba/smear-cursor.nvim"
+    },
+    "vague.nvim": []
+  }
+}
