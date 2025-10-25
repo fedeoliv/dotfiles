@@ -6,6 +6,10 @@
       "src": "https://github.com/nat-418/boole.nvim"
     },
     "mason.nvim": [],
+    "mini.move": {
+      "rev": "f33406a",
+      "src": "https://github.com/nvim-mini/mini.move"
+    },
     "mini.pairs": {
       "rev": "b9aada8",
       "src": "https://github.com/nvim-mini/mini.pairs"

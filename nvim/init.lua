@@ -16,8 +16,11 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
-	{ src = "https://github.com/chrisgrieser/nvim-spider" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
+	-- motions
+	{ src = "https://github.com/nvim-mini/mini.move" },
+	{ src = "https://github.com/chrisgrieser/nvim-spider" },
 
 	-- lsp
 	-- TODO: integrate mason with mason-lspconfig to auto install LSPs.
@@ -25,9 +28,10 @@ vim.pack.add({
 	-- I don't wanna install another dependency as a workaround (e.g. plenary)
 	{ src = "https://github.com/mason-org/mason.nvim" },
 
-	-- animations
+	-- aesthetics
 	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
 	{ src = "https://github.com/karb94/neoscroll.nvim" },
+
 	{ src = "https://github.com/nat-418/boole.nvim" }
 })
 
@@ -57,6 +61,16 @@ require("nvim-tmux-navigation").setup({
 	disable_when_zoomed = true,
 })
 
+-- motions
+require('mini.move').setup({
+	mappings = {
+		-- move visual selection in Visual mode
+		left = 'H',
+		right = 'L',
+		down = 'J',
+		up = 'K',
+	},
+})
 require("spider").setup {
 	skipInsignificantPunctuation = true,
 	consistentOperatorPending = false,
@@ -68,7 +82,7 @@ require('mini.pick').setup()
 require('mini.surround').setup()
 require('mini.pairs').setup()
 
--- animations
+-- aesthetics
 require('smear_cursor').setup()
 require('neoscroll').setup()
 
