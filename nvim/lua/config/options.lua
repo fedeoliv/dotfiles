@@ -5,6 +5,7 @@ vim.opt.tabstop = 2
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
+vim.o.winborder = "rounded"
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = "yes:1"
 vim.opt.statuscolumn = "%l %s"
