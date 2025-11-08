@@ -31,6 +31,10 @@
       "src": "https://github.com/karb94/neoscroll.nvim"
     },
     "nvim-lspconfig": [],
+    "nvim-numbertoggle": {
+      "rev": "923f970",
+      "src": "https://github.com/sitiom/nvim-numbertoggle"
+    },
     "nvim-spider": {
       "rev": "220efa6",
       "src": "https://github.com/chrisgrieser/nvim-spider"

@@ -48,6 +48,8 @@ vim.pack.add({
 	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
 	{ src = "https://github.com/karb94/neoscroll.nvim" },
 
+	--others
+	{ src = "https://github.com/sitiom/nvim-numbertoggle" },
 	{ src = "https://github.com/nat-418/boole.nvim" }
 })
 
@@ -75,59 +77,59 @@ require("oil").setup({
 
 local treesitter = require("nvim-treesitter")
 local treesitter_packages = {
-  "bash",
-  "c",
-  "comment", -- TODOs etc
-  "ecma",
-  "gitcommit",
-  "gitignore",
-  "go",
-  "gomod",
-  "gosum",
-  "html",
-  "html_tags",
-  "javascript",
-  "json",
-  "jsx",
-  "latex",
-  "lua",
-  "luadoc",
-  "luap",
-  "markdown",
-  "markdown_inline",
-  "matlab",
-  "python",
-  "query",
-  "sql",
-  "ssh_config",
-  "todotxt",
-  "todotxt",
-  "toml",
-  "typescript",
-  "typescript",
-  "typst",
-  "vim",
-  "vimdoc",
-  "yaml"
+	"bash",
+	"c",
+	"comment", -- TODOs etc
+	"ecma",
+	"gitcommit",
+	"gitignore",
+	"go",
+	"gomod",
+	"gosum",
+	"html",
+	"html_tags",
+	"javascript",
+	"json",
+	"jsx",
+	"latex",
+	"lua",
+	"luadoc",
+	"luap",
+	"markdown",
+	"markdown_inline",
+	"matlab",
+	"python",
+	"query",
+	"sql",
+	"ssh_config",
+	"todotxt",
+	"todotxt",
+	"toml",
+	"typescript",
+	"typescript",
+	"typst",
+	"vim",
+	"vimdoc",
+	"yaml"
 }
 
 -- Only install parsers that are missing
 local to_install = {}
 for _, lang in ipairs(treesitter_packages) do
-  if not pcall(vim.treesitter.language.add, lang) then
-    table.insert(to_install, lang)
-  end
+	if not pcall(vim.treesitter.language.add, lang) then
+		table.insert(to_install, lang)
+	end
 end
 
 if #to_install > 0 then
-  treesitter.install(to_install)
+	treesitter.install(to_install)
 end
 
 vim.treesitter.language.register("yaml", "yaml.docker-compose")
 vim.treesitter.language.register("yaml", "yaml.github-action")
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = treesitter_packages,
-  callback = function() vim.treesitter.start() end,
+	pattern = treesitter_packages,
+	callback = function() vim.treesitter.start() end,
 })
 
 require("nvim-tmux-navigation").setup({
