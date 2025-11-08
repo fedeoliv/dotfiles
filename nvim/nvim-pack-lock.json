@@ -5,6 +5,10 @@
       "rev": "7b4a3da",
       "src": "https://github.com/nat-418/boole.nvim"
     },
+    "colorful-menu.nvim": {
+      "rev": "932d589",
+      "src": "https://github.com/xzbdmw/colorful-menu.nvim"
+    },
     "mason.nvim": [],
     "mini.move": {
       "rev": "f33406a",
@@ -37,6 +41,8 @@
       "version": "'main'"
     },
     "nvim-treesitter": {
+      "rev": "d97d226c",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "oil.nvim": [],

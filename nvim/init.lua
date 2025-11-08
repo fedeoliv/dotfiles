@@ -1,3 +1,6 @@
+-- TODO:
+-- - git stuff
+-- - diagnostics
 require "config.options"
 require "config.keymaps"
 require "config.autocmds"
@@ -13,10 +16,19 @@ vim.pack.add({
 	{ src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/alexghergh/nvim-tmux-navigation", version = "main" },
-	{ src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{
+		src = "https://github.com/nvim-treesitter/nvim-treesitter",
+		version = "main",
+		data = {
+			run = function()
+				vim.cmd("TSUpdate")
+			end,
+		},
+	},
+	-- picker
+	{ src = "https://github.com/nvim-mini/mini.pick" },
 
 	-- motions
 	{ src = "https://github.com/nvim-mini/mini.move" },
@@ -27,6 +39,10 @@ vim.pack.add({
 	-- vim.pack currently doesn't support dependencies.
 	-- I don't wanna install another dependency as a workaround (e.g. plenary)
 	{ src = "https://github.com/mason-org/mason.nvim" },
+
+	-- completion
+	-- TODO: integrate colorful-menu with blink or nvim-cmp
+	{ src = "https://github.com/xzbdmw/colorful-menu.nvim" },
 
 	-- aesthetics
 	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
@@ -57,6 +73,63 @@ require("oil").setup({
 	},
 })
 
+local treesitter = require("nvim-treesitter")
+local treesitter_packages = {
+  "bash",
+  "c",
+  "comment", -- TODOs etc
+  "ecma",
+  "gitcommit",
+  "gitignore",
+  "go",
+  "gomod",
+  "gosum",
+  "html",
+  "html_tags",
+  "javascript",
+  "json",
+  "jsx",
+  "latex",
+  "lua",
+  "luadoc",
+  "luap",
+  "markdown",
+  "markdown_inline",
+  "matlab",
+  "python",
+  "query",
+  "sql",
+  "ssh_config",
+  "todotxt",
+  "todotxt",
+  "toml",
+  "typescript",
+  "typescript",
+  "typst",
+  "vim",
+  "vimdoc",
+  "yaml"
+}
+
+-- Only install parsers that are missing
+local to_install = {}
+for _, lang in ipairs(treesitter_packages) do
+  if not pcall(vim.treesitter.language.add, lang) then
+    table.insert(to_install, lang)
+  end
+end
+
+if #to_install > 0 then
+  treesitter.install(to_install)
+end
+
+vim.treesitter.language.register("yaml", "yaml.docker-compose")
+vim.treesitter.language.register("yaml", "yaml.github-action")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = treesitter_packages,
+  callback = function() vim.treesitter.start() end,
+})
+
 require("nvim-tmux-navigation").setup({
 	disable_when_zoomed = true,
 })
@@ -81,6 +154,9 @@ require("spider").setup {
 require('mini.pick').setup()
 require('mini.surround').setup()
 require('mini.pairs').setup()
+
+-- completion
+require("colorful-menu").setup()
 
 -- aesthetics
 require('smear_cursor').setup()
