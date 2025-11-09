@@ -9,6 +9,10 @@
       "rev": "932d589",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "mason.nvim": [],
     "mini.move": {
       "rev": "f33406a",
