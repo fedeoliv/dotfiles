@@ -33,6 +33,8 @@ vim.pack.add({
 	-- motions
 	{ src = "https://github.com/nvim-mini/mini.move" },
 	{ src = "https://github.com/chrisgrieser/nvim-spider" },
+	{ src = "https://github.com/vim-scripts/ReplaceWithRegister" },
+	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 
 	-- lsp
 	-- TODO: integrate mason with mason-lspconfig to auto install LSPs.
@@ -48,8 +50,8 @@ vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 
 	-- aesthetics
-	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
 	{ src = "https://github.com/karb94/neoscroll.nvim" },
+	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
 
 	--others
 	{ src = "https://github.com/sitiom/nvim-numbertoggle" },
@@ -170,10 +172,10 @@ require('gitsigns').setup({
 		changedelete = { text = "▎" },
 		untracked = { text = "▎" },
 	},
-	signcolumn = true,       -- Toggle with `:Gitsigns toggle_signs`
-	numhl = true,            -- Toggle with `:Gitsigns toggle_numhl`
-	linehl = false,          -- Toggle with `:Gitsigns toggle_linehl`
-	word_diff = false,       -- Toggle with `:Gitsigns toggle_word_diff`
+	signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+	numhl = true,       -- Toggle with `:Gitsigns toggle_numhl`
+	linehl = false,     -- Toggle with `:Gitsigns toggle_linehl`
+	word_diff = false,  -- Toggle with `:Gitsigns toggle_word_diff`
 	current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	current_line_blame_opts = {
 		virt_text = true,
@@ -227,3 +229,7 @@ require('boole').setup({
 		{ 'enable', 'disable' }
 	}
 })
+
+-- markdown-preview
+vim.fn["mkdp#util#install"]()
+vim.g.mkdp_filetypes = { "markdown" }

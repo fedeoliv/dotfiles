@@ -2,6 +2,7 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
+map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>")
 map({ "n", "x" }, "y", '"+y', { desc = "Yank to system clipboard" })
 map({ "n", "x" }, "<leader>d", '"+d')
 map({ "n", "x" }, "p", '"+p', { desc = "Paste from system clipboard" })

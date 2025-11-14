@@ -1,6 +1,10 @@
 {
   "plugins": {
     "LuaSnip": [],
+    "ReplaceWithRegister": {
+      "rev": "832efc2",
+      "src": "https://github.com/vim-scripts/ReplaceWithRegister"
+    },
     "boole.nvim": {
       "rev": "7b4a3da",
       "src": "https://github.com/nat-418/boole.nvim"
@@ -12,6 +16,10 @@
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "a923f5f",
+      "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "mason.nvim": [],
     "mini.move": {
