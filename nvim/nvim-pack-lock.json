@@ -21,6 +21,10 @@
       "rev": "a923f5f",
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
+    "mason-lspconfig.nvim": {
+      "rev": "b1d9a91",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
     "mason.nvim": [],
     "mini.move": {
       "rev": "f33406a",

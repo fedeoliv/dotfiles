@@ -37,10 +37,8 @@ vim.pack.add({
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 
 	-- lsp
-	-- TODO: integrate mason with mason-lspconfig to auto install LSPs.
-	-- vim.pack currently doesn't support dependencies.
-	-- I don't wanna install another dependency as a workaround (e.g. plenary)
 	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 
 	-- completion
 	-- TODO: integrate colorful-menu with blink or nvim-cmp
@@ -111,7 +109,6 @@ local treesitter_packages = {
 	"todotxt",
 	"toml",
 	"typescript",
-	"typescript",
 	"typst",
 	"vim",
 	"vimdoc",
@@ -132,9 +129,13 @@ end
 
 vim.treesitter.language.register("yaml", "yaml.docker-compose")
 vim.treesitter.language.register("yaml", "yaml.github-action")
+
+
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = treesitter_packages,
-	callback = function() vim.treesitter.start() end,
+    pattern = treesitter_packages,
+    callback = function()
+        pcall(vim.treesitter.start)
+    end,
 })
 
 require("nvim-tmux-navigation").setup({
