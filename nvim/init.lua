@@ -27,8 +27,10 @@ vim.pack.add({
 			end,
 		},
 	},
+
 	-- picker
-	{ src = "https://github.com/nvim-mini/mini.pick" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/elanmed/fzf-lua-frecency.nvim" },
 
 	-- motions
 	{ src = "https://github.com/nvim-mini/mini.move" },
@@ -132,15 +134,19 @@ vim.treesitter.language.register("yaml", "yaml.github-action")
 
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = treesitter_packages,
-    callback = function()
-        pcall(vim.treesitter.start)
-    end,
+	pattern = treesitter_packages,
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
 })
 
 require("nvim-tmux-navigation").setup({
 	disable_when_zoomed = true,
 })
+
+-- picker
+require("fzf-lua").setup()
+require('fzf-lua-frecency').setup()
 
 -- motions
 require('mini.move').setup({
@@ -159,7 +165,7 @@ require("spider").setup {
 	customPatterns = {},
 }
 
-require('mini.pick').setup()
+-- require('mini.pick').setup()
 require('mini.surround').setup()
 require('mini.pairs').setup()
 

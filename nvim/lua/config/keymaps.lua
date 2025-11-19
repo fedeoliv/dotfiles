@@ -13,8 +13,9 @@ map("n", "<leader>q", ":quit<CR>")
 map("n", "<leader>e", ":Oil<CR>")
 
 -- pick
-map("n", "<leader>f", ":Pick files<CR>")
-map("n", "<leader>fg", ":Pick grep_live<CR>")
+map("n", "<leader>ff", "<cmd>lua require('fzf-lua-frecency').frecency({cwd_only = true})<CR>", { silent = true })
+map("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+map("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -44,10 +45,10 @@ map("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true }
 
 -- smart dd: only yank the line if it's not empty
 map("n", "dd", function()
-  if vim.fn.getline(".") == "" then
-    return '"_dd'
-  end
-  return "dd"
+	if vim.fn.getline(".") == "" then
+		return '"_dd'
+	end
+	return "dd"
 end, { expr = true })
 
 -- motions

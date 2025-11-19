@@ -13,6 +13,14 @@
       "rev": "932d589",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
+    "fzf-lua": {
+      "rev": "123cc54",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "fzf-lua-frecency.nvim": {
+      "rev": "392bcd1",
+      "src": "https://github.com/elanmed/fzf-lua-frecency.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
