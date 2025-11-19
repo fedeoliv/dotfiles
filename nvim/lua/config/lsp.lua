@@ -8,29 +8,73 @@ require "mason".setup({
 	}
 })
 
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "ts_ls" }
-})
 
-vim.lsp.enable({
+local language_servers = {
 	"lua_ls",
 
-	--typescript
+	-- go
+	"gopls",
+	"golangci_lint_ls",
+
+	-- typescript
 	"ts_ls",
 
-	--python
+	-- python
 	"basedpyright",
 	"ruff",
 
-	--markdown
+	-- markdown
 	"marksman",
 
-	-- swift, objective c
-	"sourcekit",
+	-- swift
+	"sourcekit", -- not in mason-lspconfig
 
-	--xml
+	-- xml
 	"lemminx",
+}
+
+-- Additional tools: formatters, linters, etc.
+local extra_tools = {
+	"stylua",
+	"goimports",
+	"gci",
+	"gofumpt"
+}
+
+local mlsp = require("mason-lspconfig")
+local mason_supported = mlsp.get_available_servers()
+
+local mason_supported_servers = vim.tbl_filter(function(server)
+	return vim.tbl_contains(mason_supported, server)
+end, language_servers)
+
+mlsp.setup({
+	ensure_installed = mason_supported_servers,
 })
+
+-- install formatters and linters via mason registry
+local registry = require("mason-registry")
+
+for _, tool in ipairs(extra_tools) do
+	local ok, pkg = pcall(registry.get_package, tool)
+	if not ok then
+		vim.notify("Mason: Tool not found in registry: " .. tool, vim.log.levels.WARN)
+	else
+		if not pkg:is_installed() then
+			vim.notify("Mason: Installing " .. tool .. "...", vim.log.levels.INFO)
+
+			pkg:install():once("closed", function()
+				if pkg:is_installed() then
+					vim.notify("Mason: Successfully installed " .. tool, vim.log.levels.INFO)
+				else
+					vim.notify("Mason: Failed to install " .. tool, vim.log.levels.ERROR)
+				end
+			end)
+		end
+	end
+end
+
+vim.lsp.enable(language_servers)
 
 vim.lsp.config('lua_ls', {
 	on_init = function(client)
@@ -46,11 +90,7 @@ vim.lsp.config('lua_ls', {
 
 		client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
 			runtime = {
-				-- Tell the language server which version of Lua you're using (most
-				-- likely LuaJIT in the case of Neovim)
 				version = 'LuaJIT',
-				-- Tell the language server how to find Lua modules same way as Neovim
-				-- (see `:h lua-module-load`)
 				path = {
 					'lua/?.lua',
 					'lua/?/init.lua',
@@ -61,18 +101,7 @@ vim.lsp.config('lua_ls', {
 				checkThirdParty = false,
 				library = {
 					vim.env.VIMRUNTIME
-					-- Depending on the usage, you might want to add additional paths
-					-- here.
-					-- '${3rd}/luv/library'
-					-- '${3rd}/busted/library'
 				}
-				-- Or pull in all of 'runtimepath'.
-				-- NOTE: this is a lot slower and will cause issues when working on
-				-- your own configuration.
-				-- See https://github.com/neovim/nvim-lspconfig/issues/3189
-				-- library = {
-				--   vim.api.nvim_get_runtime_file('', true),
-				-- }
 			}
 		})
 	end,
