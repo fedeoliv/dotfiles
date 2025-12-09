@@ -25,6 +25,10 @@
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "lazygit.nvim": {
+      "rev": "2305dee",
+      "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
     "markdown-preview.nvim": {
       "rev": "a923f5f",
       "src": "https://github.com/iamcco/markdown-preview.nvim"

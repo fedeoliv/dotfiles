@@ -58,6 +58,16 @@ map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
 -- lsp
 map({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
+map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 
--- rest.nvim
-map("n", "<leader>rr", "<cmd>Rest run<CR>")
+-- diagnostics
+map("n", "<leader>ds", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+map("n", "<leader>dv", function()
+	vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
+end, { desc = "Toggle diagnostics virtual text" })
+
+-- git
+map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Enable LazyGit" })
+map("n", "<leader>gc", ":LazyGitFilter<CR>", { desc = "Show commits" })

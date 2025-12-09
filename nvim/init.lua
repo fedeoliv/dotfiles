@@ -7,8 +7,15 @@ require "config.autocmds"
 
 -- diagnostics
 vim.diagnostic.config({
-	float = { border = "single" },
-	virtual_text = true,
+	virtual_text = {
+		prefix = "●", -- can be a string or a function
+		spacing = 2,
+	},
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		header = '',
+	}
 })
 
 vim.pack.add({
@@ -35,7 +42,7 @@ vim.pack.add({
 	-- motions
 	{ src = "https://github.com/nvim-mini/mini.move" },
 	{ src = "https://github.com/chrisgrieser/nvim-spider" },
-	{ src = "https://github.com/vim-scripts/ReplaceWithRegister" },
+	-- { src = "https://github.com/vim-scripts/ReplaceWithRegister" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 
 	-- lsp
@@ -48,6 +55,7 @@ vim.pack.add({
 
 	--git
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 
 	-- aesthetics
 	{ src = "https://github.com/karb94/neoscroll.nvim" },
@@ -145,6 +153,7 @@ require("nvim-tmux-navigation").setup({
 })
 
 -- picker
+-- TODO: disable icons (git_icons, file_icons, color_icons)
 require("fzf-lua").setup()
 require('fzf-lua-frecency').setup()
 
