@@ -53,9 +53,11 @@ vim.pack.add({
 	-- TODO: integrate colorful-menu with blink or nvim-cmp
 	{ src = "https://github.com/xzbdmw/colorful-menu.nvim" },
 
-	--git
+	-- git
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	{ src = "https://github.com/esmuellert/vscode-diff.nvim" },
 
 	-- aesthetics
 	{ src = "https://github.com/karb94/neoscroll.nvim" },
@@ -226,6 +228,8 @@ require('gitsigns').setup({
 		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
 	end,
 })
+
+require('vscode-diff').setup()
 
 -- completion
 require("colorful-menu").setup()

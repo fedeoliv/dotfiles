@@ -71,3 +71,5 @@ end, { desc = "Toggle diagnostics virtual text" })
 -- git
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Enable LazyGit" })
 map("n", "<leader>gc", ":LazyGitFilter<CR>", { desc = "Show commits" })
+map("n", "<leader>da", "<cmd>CodeDiff<cr>", { desc = "Show git status" })
+map('n', '<leader>df', '<cmd>CodeDiff file HEAD<cr>', { desc = 'Compare file with last commit' })
