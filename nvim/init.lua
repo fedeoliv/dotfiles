@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- TODO:
 -- - git stuff
 -- - diagnostics
@@ -18,54 +20,54 @@ vim.diagnostic.config({
 	}
 })
 
+-- hooks must be defined before vim.pack.add()
+vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
+	local name, kind = ev.data.spec.name, ev.data.kind
+	if name == "nvim-treesitter" and kind == "update" then
+		if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
+		vim.cmd("TSUpdate")
+	end
+end })
+
 vim.pack.add({
 	-- core plugins
-	{ src = "https://github.com/vague2k/vague.nvim" },
-	{ src = "https://github.com/stevearc/oil.nvim" },
+	"https://github.com/vague2k/vague.nvim",
+	"https://github.com/stevearc/oil.nvim",
 	{ src = "https://github.com/alexghergh/nvim-tmux-navigation", version = "main" },
-	{ src = "https://github.com/nvim-mini/mini.surround" },
-	{ src = "https://github.com/nvim-mini/mini.pairs" },
-	{
-		src = "https://github.com/nvim-treesitter/nvim-treesitter",
-		version = "main",
-		data = {
-			run = function()
-				vim.cmd("TSUpdate")
-			end,
-		},
-	},
+	"https://github.com/nvim-mini/mini.surround",
+	"https://github.com/nvim-mini/mini.pairs",
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
 	-- picker
-	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/elanmed/fzf-lua-frecency.nvim" },
+	"https://github.com/ibhagwan/fzf-lua",
+	"https://github.com/elanmed/fzf-lua-frecency.nvim",
 
 	-- motions
-	{ src = "https://github.com/nvim-mini/mini.move" },
-	{ src = "https://github.com/chrisgrieser/nvim-spider" },
-	-- { src = "https://github.com/vim-scripts/ReplaceWithRegister" },
-	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
+	"https://github.com/nvim-mini/mini.move",
+	"https://github.com/chrisgrieser/nvim-spider",
+	"https://github.com/iamcco/markdown-preview.nvim",
 
 	-- lsp
-	{ src = "https://github.com/mason-org/mason.nvim" },
-	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
 
 	-- completion
 	-- TODO: integrate colorful-menu with blink or nvim-cmp
-	{ src = "https://github.com/xzbdmw/colorful-menu.nvim" },
+	"https://github.com/xzbdmw/colorful-menu.nvim",
 
 	-- git
-	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/kdheepak/lazygit.nvim" },
-	{ src = "https://github.com/MunifTanjim/nui.nvim" },
-	{ src = "https://github.com/esmuellert/vscode-diff.nvim" },
+	"https://github.com/lewis6991/gitsigns.nvim",
+	"https://github.com/kdheepak/lazygit.nvim",
+	"https://github.com/MunifTanjim/nui.nvim",
+	"https://github.com/esmuellert/codediff.nvim",
 
 	-- aesthetics
-	{ src = "https://github.com/karb94/neoscroll.nvim" },
-	{ src = "https://github.com/sphamba/smear-cursor.nvim" },
+	"https://github.com/karb94/neoscroll.nvim",
+	"https://github.com/sphamba/smear-cursor.nvim",
 
-	--others
-	{ src = "https://github.com/sitiom/nvim-numbertoggle" },
-	{ src = "https://github.com/nat-418/boole.nvim" }
+	-- others
+	"https://github.com/sitiom/nvim-numbertoggle",
+	"https://github.com/nat-418/boole.nvim",
 })
 
 vim.cmd("colorscheme vague")
@@ -229,7 +231,7 @@ require('gitsigns').setup({
 	end,
 })
 
-require('vscode-diff').setup()
+require('codediff').setup()
 
 -- completion
 require("colorful-menu").setup()

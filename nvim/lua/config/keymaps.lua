@@ -7,7 +7,7 @@ map({ "n", "x" }, "y", '"+y', { desc = "Yank to system clipboard" })
 map({ "n", "x" }, "<leader>d", '"+d')
 map({ "n", "x" }, "p", '"+p', { desc = "Paste from system clipboard" })
 
-map("n", "<leader>o", ":update<CR> :source<CR>")
+map("n", "<leader>o", ":restart<CR>")
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit<CR>")
 map("n", "<leader>e", ":Oil<CR>")

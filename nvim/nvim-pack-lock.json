@@ -1,32 +1,31 @@
 {
   "plugins": {
-    "LuaSnip": [],
-    "ReplaceWithRegister": {
-      "rev": "832efc2",
-      "src": "https://github.com/vim-scripts/ReplaceWithRegister"
-    },
     "boole.nvim": {
       "rev": "7b4a3da",
       "src": "https://github.com/nat-418/boole.nvim"
     },
+    "codediff.nvim": {
+      "rev": "8afc229",
+      "src": "https://github.com/esmuellert/codediff.nvim"
+    },
     "colorful-menu.nvim": {
-      "rev": "932d589",
+      "rev": "b51a659",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "fzf-lua": {
-      "rev": "123cc54",
+      "rev": "1ae863c",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "fzf-lua-frecency.nvim": {
-      "rev": "392bcd1",
+      "rev": "5726403",
       "src": "https://github.com/elanmed/fzf-lua-frecency.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "20ad441",
+      "rev": "6d808f9",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "lazygit.nvim": {
-      "rev": "2305dee",
+      "rev": "a04ad0d",
       "src": "https://github.com/kdheepak/lazygit.nvim"
     },
     "markdown-preview.nvim": {
@@ -34,41 +33,38 @@
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "b1d9a91",
+      "rev": "0c2823e",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
-    "mason.nvim": [],
+    "mason.nvim": {
+      "rev": "12ddd18"
+    },
     "mini.move": {
-      "rev": "f33406a",
+      "rev": "74d1401",
       "src": "https://github.com/nvim-mini/mini.move"
     },
     "mini.pairs": {
-      "rev": "b9aada8",
+      "rev": "42387c7",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
-    "mini.pick": {
-      "rev": "96ee37d",
-      "src": "https://github.com/nvim-mini/mini.pick"
-    },
     "mini.surround": {
-      "rev": "444e155",
+      "rev": "2715e04",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
     "neoscroll.nvim": {
-      "rev": "f957373",
+      "rev": "c8d2997",
       "src": "https://github.com/karb94/neoscroll.nvim"
     },
     "nui.nvim": {
       "rev": "de74099",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
-    "nvim-lspconfig": [],
     "nvim-numbertoggle": {
-      "rev": "923f970",
+      "rev": "c5c0d30",
       "src": "https://github.com/sitiom/nvim-numbertoggle"
     },
     "nvim-spider": {
-      "rev": "220efa6",
+      "rev": "4fdd56a",
       "src": "https://github.com/chrisgrieser/nvim-spider"
     },
     "nvim-tmux-navigation": {
@@ -77,19 +73,19 @@
       "version": "'main'"
     },
     "nvim-treesitter": {
-      "rev": "d97d226c",
+      "rev": "4916d659",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
-    "oil.nvim": [],
+    "oil.nvim": {
+      "rev": "0fcc838"
+    },
     "smear-cursor.nvim": {
-      "rev": "abfa583",
+      "rev": "9e9378d",
       "src": "https://github.com/sphamba/smear-cursor.nvim"
     },
-    "vague.nvim": [],
-    "vscode-diff.nvim": {
-      "rev": "1610dbf",
-      "src": "https://github.com/esmuellert/vscode-diff.nvim"
+    "vague.nvim": {
+      "rev": "fd58046"
     }
   }
 }
