@@ -92,65 +92,7 @@ require("oil").setup({
 	},
 })
 
-local treesitter = require("nvim-treesitter")
-local treesitter_packages = {
-	"bash",
-	"c",
-	"comment", -- TODOs etc
-	"ecma",
-	"gitcommit",
-	"gitignore",
-	"go",
-	"gomod",
-	"gosum",
-	"html",
-	"html_tags",
-	"javascript",
-	"json",
-	"jsx",
-	"latex",
-	"lua",
-	"luadoc",
-	"luap",
-	"markdown",
-	"markdown_inline",
-	"matlab",
-	"python",
-	"query",
-	"sql",
-	"ssh_config",
-	"todotxt",
-	"todotxt",
-	"toml",
-	"typescript",
-	"typst",
-	"vim",
-	"vimdoc",
-	"yaml"
-}
-
--- Only install parsers that are missing
-local to_install = {}
-for _, lang in ipairs(treesitter_packages) do
-	if not pcall(vim.treesitter.language.add, lang) then
-		table.insert(to_install, lang)
-	end
-end
-
-if #to_install > 0 then
-	treesitter.install(to_install)
-end
-
-vim.treesitter.language.register("yaml", "yaml.docker-compose")
-vim.treesitter.language.register("yaml", "yaml.github-action")
-
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = treesitter_packages,
-	callback = function()
-		pcall(vim.treesitter.start)
-	end,
-})
+require "config.treesitter"
 
 require("nvim-tmux-navigation").setup({
 	disable_when_zoomed = true,
