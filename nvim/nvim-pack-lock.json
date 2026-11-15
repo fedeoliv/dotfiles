@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "73813308abc2eaeff2bc0d3f2f79270c491be9d7",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
+    "ReplaceWithRegister": {
+      "rev": "832efc23111d19591d495dc72286de2fb0b09345",
+      "src": "https://github.com/vim-scripts/ReplaceWithRegister"
+    },
     "boole.nvim": {
       "rev": "7b4a3da",
       "src": "https://github.com/nat-418/boole.nvim"
@@ -48,6 +56,10 @@
       "rev": "03eb1f0",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
+    "mini.pick": {
+      "rev": "437d44eb57312f23e6b931704694fc294922cd88",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
     "mini.surround": {
       "rev": "5357f00",
       "src": "https://github.com/nvim-mini/mini.surround"
@@ -59,6 +71,10 @@
     "nui.nvim": {
       "rev": "10fc361",
       "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "ac98db2f9f06a56498ec890a96928774eae412c3",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
       "rev": "704e098",
@@ -89,6 +105,10 @@
     "vague.nvim": {
       "rev": "73f8aaa",
       "src": "https://github.com/vague2k/vague.nvim"
+    },
+    "vscode-diff.nvim": {
+      "rev": "8afc229d38dc13ce71b2ffbb860084b2c726e061",
+      "src": "https://github.com/esmuellert/vscode-diff.nvim"
     }
   }
 }
