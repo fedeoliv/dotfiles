@@ -21,13 +21,15 @@ vim.diagnostic.config({
 })
 
 -- hooks must be defined before vim.pack.add()
-vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
-	local name, kind = ev.data.spec.name, ev.data.kind
-	if name == "nvim-treesitter" and kind == "update" then
-		if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
-		vim.cmd("TSUpdate")
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		local name, kind = ev.data.spec.name, ev.data.kind
+		if name == "nvim-treesitter" and kind == "update" then
+			if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
+			vim.cmd("TSUpdate")
+		end
 	end
-end })
+})
 
 vim.pack.add({
 	-- core plugins
@@ -78,8 +80,12 @@ require("nvim-tmux-navigation").setup({
 })
 
 -- picker
--- TODO: disable icons (git_icons, file_icons, color_icons)
-require("fzf-lua").setup()
+require("fzf-lua").setup({
+	defaults = {
+		file_icons = false,
+	},
+})
+
 require('fzf-lua-frecency').setup()
 
 -- motions
