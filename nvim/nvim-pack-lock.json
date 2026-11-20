@@ -74,10 +74,6 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
-    "oil.nvim": {
-      "rev": "d3733d9",
-      "src": "https://github.com/stevearc/oil.nvim"
-    },
     "smear-cursor.nvim": {
       "rev": "f6cb57c",
       "src": "https://github.com/sphamba/smear-cursor.nvim"

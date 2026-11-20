@@ -10,7 +10,7 @@ map({ "n", "x" }, "p", '"+p', { desc = "Paste from system clipboard" })
 map("n", "<leader>o", ":restart<CR>")
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit<CR>")
-map("n", "<leader>e", ":Oil<CR>")
+map("n", "<leader>e", ":edit .<CR>")
 
 -- pick
 map("n", "<leader>ff", "<cmd>lua require('fzf-lua-frecency').frecency({cwd_only = true})<CR>", { silent = true })
@@ -71,3 +71,16 @@ end, { desc = "Toggle diagnostics virtual text" })
 -- git
 map("n", "<leader>gg", ":DiffBanditCommitPanel<CR>", { desc = "Show commit panel" })
 map("n", "<leader>gc", ":DiffBanditGit<CR>", { desc = "Show Git changes on the current file" })
+
+-- dir browser
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "directory",
+	callback = function(args)
+		map("n", "<C-p>", function()
+			require("config.dir.preview").toggle(args.buf)
+		end, {
+			buffer = args.buf,
+			desc = "Toggle file preview",
+		})
+	end,
+})

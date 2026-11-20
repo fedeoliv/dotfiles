@@ -32,7 +32,6 @@ end })
 vim.pack.add({
 	-- core plugins
 	"https://github.com/vague2k/vague.nvim",
-	"https://github.com/stevearc/oil.nvim",
 	{ src = "https://github.com/alexghergh/nvim-tmux-navigation", version = "main" },
 	"https://github.com/nvim-mini/mini.surround",
 	"https://github.com/nvim-mini/mini.pairs",
@@ -73,24 +72,6 @@ vim.cmd("colorscheme vague")
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
 
 require "config.lsp"
-
-require("oil").setup({
-	default_file_explorer = true,
-	view_options = {
-		show_hidden = true,
-	},
-	lsp_file_methods = {
-		enabled = true,
-		timeout_ms = 1000,
-		autosave_changes = true,
-	},
-	float = {
-		max_width = 0.7,
-		max_height = 0.6,
-		border = "rounded",
-	},
-})
-
 require "config.treesitter"
 
 require("nvim-tmux-navigation").setup({
