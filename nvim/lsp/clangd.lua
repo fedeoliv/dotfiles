@@ -28,7 +28,7 @@ local function switch_source_header(bufnr, client)
       vim.notify('corresponding file cannot be determined')
       return
     end
-    vim.cmd.edit(vim.uri_to_fname(result))
+    vim.cmd.edit(vim.uri.to_fname(result))
   end, bufnr)
 end
 

@@ -4,6 +4,15 @@ vim.opt.wrap = false
 vim.opt.tabstop = 2
 vim.opt.swapfile = false
 vim.opt.undofile = true
+vim.opt.completeopt = {
+	"menuone",
+	"noselect",
+	"popup",
+	"preselect",
+}
+vim.opt.switchbuf = "useopen,usetab,uselast"
+vim.opt.scrolloff = 8
+vim.opt.scrolloffpad = 1
 
 vim.o.winborder = "rounded"
 vim.opt.numberwidth = 3

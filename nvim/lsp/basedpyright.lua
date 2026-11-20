@@ -25,7 +25,7 @@ return {
 			function()
 				local params = {
 					command = "basedpyright.organizeimports",
-					arguments = { vim.uri_from_bufnr(0) },
+					arguments = { vim.uri.from_buf(0) },
 				}
 
 				local clients = vim.lsp.get_clients({

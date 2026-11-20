@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd({ "PackChanged" }, {
 local gitignored_ns = vim.api.nvim_create_namespace("directory_gitignored")
 
 vim.api.nvim_set_hl(0, "DirectoryIgnored", {
-	link = "Comment",
+	link = "Dimmed",
 	default = true,
 })
 
@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)
 		local preview = require("config.dir.preview")
 		vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinLeave", "BufWipeout" }, {
-			buffer = args.buf,
+			buf = args.buf,
 			callback = function(event)
 				if event.event ~= "CursorMoved" then
 					preview.close(args.buf)

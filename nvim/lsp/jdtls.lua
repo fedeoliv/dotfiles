@@ -1,7 +1,7 @@
 local handlers = require("vim.lsp.handlers")
 
 local env = {
-  HOME = vim.loop.os_homedir(),
+  HOME = vim.uv.os_homedir(),
   XDG_CACHE_HOME = os.getenv("XDG_CACHE_HOME"),
   JDTLS_JVM_ARGS = os.getenv("JDTLS_JVM_ARGS"),
 }

@@ -60,10 +60,23 @@ map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 map({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
 map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 
+local function jump_to_diagnostic(count)
+	vim.diagnostic.jump({
+		count = count,
+		on_jump = function(_, bufnr)
+			vim.diagnostic.open_float({
+				bufnr = bufnr,
+				scope = "cursor",
+				focus = false,
+			})
+		end,
+	})
+end
+
 -- diagnostics
 map("n", "<leader>ds", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+map("n", "[d", function() jump_to_diagnostic(-vim.v.count1) end, { desc = "Previous diagnostic" })
+map("n", "]d", function() jump_to_diagnostic(vim.v.count1) end, { desc = "Next diagnostic" })
 map("n", "<leader>dv", function()
 	vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
 end, { desc = "Toggle diagnostics virtual text" })
@@ -79,7 +92,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		map("n", "<C-p>", function()
 			require("config.dir.preview").toggle(args.buf)
 		end, {
-			buffer = args.buf,
+			buf = args.buf,
 			desc = "Toggle file preview",
 		})
 	end,

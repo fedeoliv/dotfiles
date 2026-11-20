@@ -69,7 +69,6 @@ vim.pack.add({
 })
 
 vim.cmd("colorscheme vague")
-vim.cmd [[set completeopt+=menuone,noselect,popup]]
 
 require "config.lsp"
 require "config.treesitter"
@@ -133,7 +132,7 @@ require('gitsigns').setup({
 		local gs = package.loaded.gitsigns
 
 		local function map(mode, l, r, desc)
-			vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+			vim.keymap.set(mode, l, r, { buf = buffer, desc = desc })
 		end
 
 		-- stylua: ignore start
