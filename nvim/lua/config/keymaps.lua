@@ -69,7 +69,5 @@ map("n", "<leader>dv", function()
 end, { desc = "Toggle diagnostics virtual text" })
 
 -- git
-map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Enable LazyGit" })
-map("n", "<leader>gc", ":LazyGitFilter<CR>", { desc = "Show commits" })
-map("n", "<leader>da", "<cmd>CodeDiff<cr>", { desc = "Show git status" })
-map('n', '<leader>df', '<cmd>CodeDiff file HEAD<cr>', { desc = 'Compare file with last commit' })
+map("n", "<leader>gg", ":DiffBanditCommitPanel<CR>", { desc = "Show commit panel" })
+map("n", "<leader>gc", ":DiffBanditGit<CR>", { desc = "Show Git changes on the current file" })

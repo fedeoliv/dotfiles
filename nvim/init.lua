@@ -57,9 +57,8 @@ vim.pack.add({
 
 	-- git
 	"https://github.com/lewis6991/gitsigns.nvim",
-	"https://github.com/kdheepak/lazygit.nvim",
 	"https://github.com/MunifTanjim/nui.nvim",
-	"https://github.com/esmuellert/codediff.nvim",
+	"https://github.com/CoreyKaylor/diffbandit.nvim",
 
 	-- aesthetics
 	"https://github.com/karb94/neoscroll.nvim",
@@ -172,8 +171,6 @@ require('gitsigns').setup({
 		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
 	end,
 })
-
-require('codediff').setup()
 
 -- completion
 require("colorful-menu").setup()
