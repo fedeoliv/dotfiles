@@ -119,20 +119,3 @@ vim.api.nvim_create_autocmd("User", {
 		end
 	end,
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "directory",
-	callback = function(args)
-		local preview = require("config.dir.preview")
-		vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinLeave", "BufWipeout" }, {
-			buf = args.buf,
-			callback = function(event)
-				if event.event ~= "CursorMoved" then
-					preview.close(args.buf)
-					return
-				end
-				preview.update(args.buf)
-			end,
-		})
-	end,
-})

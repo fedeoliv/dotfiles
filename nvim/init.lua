@@ -1,11 +1,14 @@
 vim.loader.enable()
 
+require("config.tmux_passthrough").enable()
+
 -- TODO:
 -- - git stuff
 -- - diagnostics
 require "config.options"
 require "config.keymaps"
 require "config.autocmds"
+require("config.dir.preview").setup()
 
 -- diagnostics
 vim.diagnostic.config({

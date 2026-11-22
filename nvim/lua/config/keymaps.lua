@@ -84,16 +84,3 @@ end, { desc = "Toggle diagnostics virtual text" })
 -- git
 map("n", "<leader>gg", ":DiffBanditCommitPanel<CR>", { desc = "Show commit panel" })
 map("n", "<leader>gc", ":DiffBanditGit<CR>", { desc = "Show Git changes on the current file" })
-
--- dir browser
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "directory",
-	callback = function(args)
-		map("n", "<C-p>", function()
-			require("config.dir.preview").toggle(args.buf)
-		end, {
-			buf = args.buf,
-			desc = "Toggle file preview",
-		})
-	end,
-})

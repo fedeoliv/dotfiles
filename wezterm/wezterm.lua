@@ -13,6 +13,9 @@ config.default_cursor_style = "BlinkingBar"
 config.max_fps = 240
 config.animation_fps = 10
 
+-- graphics protocol
+config.enable_kitty_graphics = true
+
 -- window
 -- config.window_background_opacity = 0.95
 config.window_close_confirmation = "NeverPrompt"
