@@ -1,16 +1,11 @@
 # dotfiles
 
-Configuration files tweaked to my dev environment needs on macOS.
+My dotfiles centered on a minimalist [Neovim](https://neovim.io/) 0.13 config.
 
-<img width="1512" alt="Screenshot" src="https://github.com/fedeoliv/dotfiles/assets/5161098/89fab71a-a8de-4676-91d4-6e159c44cd10">
+- Package management with `vim.pack`;
+- Native LSP config and completion with `vim.lsp.config`, `vim.lsp.enable` (`nvim/lsp/`), and `vim.lsp.completion`;
+<!-- - with Mason used for server binaries. -->
+- Directory explorer with built-in `dir.lua`, with buffer extended with `gitignore` dimming and floating text and image previews (with experimental `vim.ui.img`);
+- 17 complementary plugins such as `nvim-treesitter`, `fzf-lua`, `mini` editing helpers and more.
 
-## Overview
-
-- [WezTerm](https://github.com/wez/wezterm) as the GPU-accelerated terminal
-- [catppuccin](https://github.com/catppuccin/catppuccin) `Mocha` colorscheme used in WezTerm, tmux and Neovim
-- `CaskaydiaCove Nerd Font` (available on [nerdfonts](https://www.nerdfonts.com/font-downloads) page)
-- [Neovim](https://neovim.io/) configured as an IDE based on [LazyVim](https://github.com/LazyVim/LazyVim). Currently tweaked for Python development.
-- [tmux](https://github.com/tmux/tmux/wiki) as the terminal multiplexer
-- [yabai](https://github.com/koekeishiya/yabai) as the tiling window manager
-- [skhd](https://github.com/koekeishiya/skhd) as the hotkey deamon with keybindings configured for yabai
-- [neofetch](https://github.com/dylanaraps/neofetch) as a CLI system info tool
+Additionally configs for wezterm, tmux, aerospace and lazygit.
