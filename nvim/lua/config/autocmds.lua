@@ -1,3 +1,27 @@
+local numbertoggle = vim.api.nvim_create_augroup("NumberToggle", { clear = true })
+
+vim.api.nvim_create_autocmd(
+	{ "InsertEnter", "CmdlineEnter", "WinLeave", "FocusLost" },
+	{
+		group = numbertoggle,
+		callback = function()
+			vim.wo.relativenumber = false
+		end,
+	}
+)
+
+vim.api.nvim_create_autocmd(
+	{ "InsertLeave", "CmdlineLeave", "WinEnter", "FocusGained" },
+	{
+		group = numbertoggle,
+		callback = function()
+			if vim.wo.number then
+				vim.wo.relativenumber = true
+			end
+		end,
+	}
+)
+
 -- automated bullet lists 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",

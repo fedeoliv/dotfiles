@@ -52,7 +52,6 @@ vim.pack.add({
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 
-	-- completion
 	-- TODO: integrate colorful-menu with blink or nvim-cmp
 	"https://github.com/xzbdmw/colorful-menu.nvim",
 
@@ -64,10 +63,6 @@ vim.pack.add({
 	-- aesthetics
 	"https://github.com/karb94/neoscroll.nvim",
 	"https://github.com/sphamba/smear-cursor.nvim",
-
-	-- others
-	"https://github.com/sitiom/nvim-numbertoggle",
-	"https://github.com/nat-418/boole.nvim",
 })
 
 vim.cmd("colorscheme vague")
@@ -164,18 +159,6 @@ require("colorful-menu").setup()
 -- aesthetics
 require('smear_cursor').setup()
 require('neoscroll').setup()
-
-require('boole').setup({
-	mappings = {
-		increment = '<C-a>',
-		decrement = '<C-x>'
-	},
-	-- User defined loops
-	additions = {},
-	allow_caps_additions = {
-		{ 'enable', 'disable' }
-	}
-})
 
 -- markdown-preview
 vim.fn["mkdp#util#install"]()

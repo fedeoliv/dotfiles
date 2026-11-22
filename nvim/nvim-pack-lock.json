@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "boole.nvim": {
-      "rev": "7b4a3da",
-      "src": "https://github.com/nat-418/boole.nvim"
-    },
     "colorful-menu.nvim": {
       "rev": "196ddf1",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
@@ -55,10 +51,6 @@
     "nui.nvim": {
       "rev": "10fc361",
       "src": "https://github.com/MunifTanjim/nui.nvim"
-    },
-    "nvim-numbertoggle": {
-      "rev": "704e098",
-      "src": "https://github.com/sitiom/nvim-numbertoggle"
     },
     "nvim-spider": {
       "rev": "38f74f7",
