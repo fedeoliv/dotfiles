@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "colorful-menu.nvim": {
-      "rev": "196ddf1",
-      "src": "https://github.com/xzbdmw/colorful-menu.nvim"
-    },
     "diffbandit.nvim": {
       "rev": "5ea8278fec0c5e14a652a78df532f8e518c57fb2",
       "src": "https://github.com/CoreyKaylor/diffbandit.nvim"

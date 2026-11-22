@@ -55,9 +55,6 @@ vim.pack.add({
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 
-	-- TODO: integrate colorful-menu with blink or nvim-cmp
-	"https://github.com/xzbdmw/colorful-menu.nvim",
-
 	-- git
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/MunifTanjim/nui.nvim",
@@ -155,9 +152,6 @@ require('gitsigns').setup({
 		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
 	end,
 })
-
--- completion
-require("colorful-menu").setup()
 
 -- aesthetics
 require('smear_cursor').setup()
